@@ -1,0 +1,25 @@
+{
+    "title": "SpringBoot实战笔记二：整合Swagger UI",
+    "frontmatter": {
+        "layout": "PostLayout",
+        "prev": "./SpringBoot实战笔记一：简单项目搭建",
+        "next": "./SpringBoot实战笔记三：添加Mybatis"
+    },
+    "regularPath": "/springboot/SpringBoot%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0%E4%BA%8C%EF%BC%9A%E6%95%B4%E5%90%88Swagger%20UI.html",
+    "relativePath": "springboot/SpringBoot实战笔记二：整合Swagger UI.md",
+    "key": "v-cb017f0a",
+    "path": "/springboot/SpringBoot%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0%E4%BA%8C%EF%BC%9A%E6%95%B4%E5%90%88Swagger%20UI.html",
+    "headers": [{
+        "level": 2,
+        "title": "1.添加Swagger UI依赖",
+        "slug": "_1-添加swagger-ui依赖"
+    }, {
+        "level": 2,
+        "title": "2.创建配置文件SwaggerConfig",
+        "slug": "_2-创建配置文件swaggerconfig"
+    }, {
+        "level": 2,
+        "title": "3.给Controller添加注解",
+        "slug": "_3-给controller添加注解"
+    }]
+}

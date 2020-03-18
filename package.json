@@ -1,0 +1,22 @@
+{
+  "name": "VuePress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "vuepress dev blog",
+    "build": "vuepress build blog",
+    "deploy": "bash deploy.sh"
+  },
+  "keywords": [],
+  "author": "yuluo",
+  "license": "ISC",
+  "dependencies": {
+    "vuepress": "^1.3.1"
+  },
+  "devDependencies": {
+  }
+}

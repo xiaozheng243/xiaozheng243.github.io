@@ -1,0 +1,273 @@
+ {
+     "title": "Coding&Life",
+     "description": "VuePress starter template for CodeSandbox",
+     "base": "/",
+     "pages": [{
+         "title": "Hello",
+         "frontmatter": {
+             "layout": "PostListLayout"
+         },
+         "regularPath": "/",
+         "relativePath": "README.md",
+         "key": "v-0181a80c",
+         "path": "/"
+     }, {
+         "title": "About me",
+         "frontmatter": {
+             "navbar": true
+         },
+         "regularPath": "/about.html",
+         "relativePath": "about.md",
+         "key": "v-3a78bbef",
+         "path": "/about.html"
+     }, {
+         "frontmatter": {},
+         "regularPath": "/config.html",
+         "relativePath": "config.md",
+         "key": "v-f7ee0192",
+         "path": "/config.html"
+     }, {
+         "frontmatter": {},
+         "regularPath": "/life/",
+         "relativePath": "life/README.md",
+         "key": "v-7219a988",
+         "path": "/life/"
+     }, {
+         "frontmatter": {},
+         "regularPath": "/life/one.html",
+         "relativePath": "life/one.md",
+         "key": "v-0a5d7fd5",
+         "path": "/life/one.html"
+     }, {
+         "title": "佳软推荐",
+         "frontmatter": {},
+         "regularPath": "/share/",
+         "relativePath": "share/README.md",
+         "key": "v-54ec386c",
+         "path": "/share/"
+     }, {
+         "title": "佳软推荐——Mac篇",
+         "frontmatter": {},
+         "regularPath": "/share/mac.html",
+         "relativePath": "share/mac.md",
+         "key": "v-c98e11a2",
+         "path": "/share/mac.html"
+     }, {
+         "title": "VuePress搭建过程",
+         "frontmatter": {},
+         "regularPath": "/share/vuepress.html",
+         "relativePath": "share/vuepress.md",
+         "key": "v-5ef5723e",
+         "path": "/share/vuepress.html",
+         "headers": [{
+             "level": 2,
+             "title": "初始化项目",
+             "slug": "初始化项目"
+         }]
+     }, {
+         "title": "网站推荐",
+         "frontmatter": {},
+         "regularPath": "/share/websites.html",
+         "relativePath": "share/websites.md",
+         "key": "v-c9a3902a",
+         "path": "/share/websites.html",
+         "headers": [{
+             "level": 2,
+             "title": "健康类",
+             "slug": "健康类"
+         }, {
+             "level": 3,
+             "title": "https://musclewiki.org/",
+             "slug": "https-musclewiki-org"
+         }, {
+             "level": 2,
+             "title": "UI/前端",
+             "slug": "ui-前端"
+         }, {
+             "level": 3,
+             "title": "https://uigradients.com/#Winter",
+             "slug": "https-uigradients-com-winter"
+         }, {
+             "level": 3,
+             "title": "后台管理模板",
+             "slug": "后台管理模板"
+         }, {
+             "level": 2,
+             "title": "工具",
+             "slug": "工具"
+         }, {
+             "level": 2,
+             "title": "有点意思",
+             "slug": "有点意思"
+         }]
+     }, {
+         "title": "佳软推荐——Windows篇",
+         "frontmatter": {},
+         "regularPath": "/share/windows.html",
+         "relativePath": "share/windows.md",
+         "key": "v-07e7b02f",
+         "path": "/share/windows.html"
+     }, {
+         "title": "SpringBoot实战笔记列表",
+         "frontmatter": {
+             "sidebar": false,
+             "layout": "PostLayout"
+         },
+         "regularPath": "/springboot/",
+         "relativePath": "springboot/README.md",
+         "key": "v-1911e4c8",
+         "path": "/springboot/",
+         "headers": [{
+             "level": 2,
+             "title": "SpringBoot实战笔记列表",
+             "slug": "springboot实战笔记列表"
+         }],
+         "excerpt": "<h2 id=\"springboot实战笔记列表\"><a class=\"header-anchor\" href=\"#springboot实战笔记列表\">#</a> SpringBoot实战笔记列表</h2>\n<p>test</p>\n"
+     }, {
+         "title": "SpringBoot实战笔记一：简单项目搭建",
+         "frontmatter": {
+             "sidebar": false
+         },
+         "regularPath": "/springboot/SpringBoot%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0%E4%B8%80%EF%BC%9A%E7%AE%80%E5%8D%95%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA.html",
+         "relativePath": "springboot/SpringBoot实战笔记一：简单项目搭建.md",
+         "key": "v-16ff90d7",
+         "path": "/springboot/SpringBoot%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0%E4%B8%80%EF%BC%9A%E7%AE%80%E5%8D%95%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA.html",
+         "headers": [{
+             "level": 2,
+             "title": "方式一：Spring Initializr",
+             "slug": "方式一：spring-initializr"
+         }, {
+             "level": 3,
+             "title": "1.1.访问网站https://start.spring.io/",
+             "slug": "_1-1-访问网站https-start-spring-io"
+         }, {
+             "level": 3,
+             "title": "1.2.导入项目",
+             "slug": "_1-2-导入项目"
+         }, {
+             "level": 3,
+             "title": "1.3.启动项目",
+             "slug": "_1-3-启动项目"
+         }, {
+             "level": 3,
+             "title": "1.4.添加简单访问路径",
+             "slug": "_1-4-添加简单访问路径"
+         }, {
+             "level": 2,
+             "title": "方式二：IDEA本地创建项目",
+             "slug": "方式二：idea本地创建项目"
+         }, {
+             "level": 3,
+             "title": "2.1.选择Spring Initializr",
+             "slug": "_2-1-选择spring-initializr"
+         }, {
+             "level": 3,
+             "title": "2.2.配置项目信息",
+             "slug": "_2-2-配置项目信息"
+         }, {
+             "level": 3,
+             "title": "2.3.添加所需依赖",
+             "slug": "_2-3-添加所需依赖"
+         }, {
+             "level": 3,
+             "title": "2.4.选择地址保存项目",
+             "slug": "_2-4-选择地址保存项目"
+         }, {
+             "level": 2,
+             "title": "项目结构及注解简析",
+             "slug": "项目结构及注解简析"
+         }, {
+             "level": 3,
+             "title": "3.1项目结构",
+             "slug": "_3-1项目结构"
+         }, {
+             "level": 3,
+             "title": "3.2本文涉及注解",
+             "slug": "_3-2本文涉及注解"
+         }],
+         "excerpt": "<h1 id=\"springboot实战笔记一：简单项目搭建\"><a class=\"header-anchor\" href=\"#springboot实战笔记一：简单项目搭建\">#</a> SpringBoot实战笔记一：简单项目搭建</h1>\n<p>[TOC]</p>\n<p>这是SpringBoot学习系列的第一个笔记。希望这是一个美好的开端，也希望后续本人能够完成整个SpringBoot框架的学习。这是初学者的学习笔记，操作过程尽量简单详细，大神请轻喷（狗头保命）。话不多说，下面介绍几种创建SpringBoot项目的方法。</p>\n"
+     }, {
+         "title": "SpringBoot实战笔记三：添加Mybatis",
+         "frontmatter": {},
+         "regularPath": "/springboot/SpringBoot%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0%E4%B8%89%EF%BC%9A%E6%B7%BB%E5%8A%A0Mybatis.html",
+         "relativePath": "springboot/SpringBoot实战笔记三：添加Mybatis.md",
+         "key": "v-0358b9de",
+         "path": "/springboot/SpringBoot%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0%E4%B8%89%EF%BC%9A%E6%B7%BB%E5%8A%A0Mybatis.html",
+         "headers": [{
+             "level": 2,
+             "title": "1.添加依赖",
+             "slug": "_1-添加依赖"
+         }, {
+             "level": 2,
+             "title": "2.添加配置文件",
+             "slug": "_2-添加配置文件"
+         }, {
+             "level": 2,
+             "title": "3.添加Dao接口",
+             "slug": "_3-添加dao接口"
+         }, {
+             "level": 2,
+             "title": "4.添加项目全局配置",
+             "slug": "_4-添加项目全局配置"
+         }, {
+             "level": 2,
+             "title": "5.添加Mapper扫描",
+             "slug": "_5-添加mapper扫描"
+         }]
+     }, {
+         "title": "SpringBoot实战笔记二：整合Swagger UI",
+         "frontmatter": {
+             "layout": "PostLayout",
+             "prev": "./SpringBoot实战笔记一：简单项目搭建",
+             "next": "./SpringBoot实战笔记三：添加Mybatis"
+         },
+         "regularPath": "/springboot/SpringBoot%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0%E4%BA%8C%EF%BC%9A%E6%95%B4%E5%90%88Swagger%20UI.html",
+         "relativePath": "springboot/SpringBoot实战笔记二：整合Swagger UI.md",
+         "key": "v-cb017f0a",
+         "path": "/springboot/SpringBoot%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0%E4%BA%8C%EF%BC%9A%E6%95%B4%E5%90%88Swagger%20UI.html",
+         "headers": [{
+             "level": 2,
+             "title": "1.添加Swagger UI依赖",
+             "slug": "_1-添加swagger-ui依赖"
+         }, {
+             "level": 2,
+             "title": "2.创建配置文件SwaggerConfig",
+             "slug": "_2-创建配置文件swaggerconfig"
+         }, {
+             "level": 2,
+             "title": "3.给Controller添加注解",
+             "slug": "_3-给controller添加注解"
+         }]
+     }],
+     "themeConfig": {
+         "logo": "/favicon.ico",
+         "nav": [{
+             "text": "Home",
+             "link": "/"
+         }, {
+             "text": "Java",
+             "ariaLabel": "Language Menu",
+             "items": [{
+                 "text": "SpringBoot",
+                 "link": "/springboot/"
+             }]
+         }, {
+             "text": "Life",
+             "link": "/life/"
+         }, {
+             "text": "Share",
+             "link": "/share/"
+         }, {
+             "text": "About me",
+             "link": "/about/"
+         }],
+         "sidebar": "auto",
+         "searchMaxSuggestions": 10,
+         "displayAllHeaders": true,
+         "activeHeaderLinks": true,
+         "lastUpdated": "Last Updated",
+         "nextLinks": true,
+         "prevLinks": true,
+         "smoothScroll": true
+     }
+ }

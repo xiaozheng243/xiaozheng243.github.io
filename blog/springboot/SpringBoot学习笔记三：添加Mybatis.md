@@ -1,4 +1,9 @@
-# SpringBoot实战笔记三：添加Mybatis
+---
+prev: ./SpringBoot学习笔记二：整合Swagger UI
+
+---
+
+# SpringBoot学习笔记三：添加Mybatis
 
 > Mybatis是一个支持定制化SQL、存储过程及高级映射的持久化框架。 -- Mybatis官方
 

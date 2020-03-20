@@ -5,4 +5,4 @@ navbar: true
 
 # About me
 
-Java开发，萌新，喜欢前端知识
+Java开发，也喜欢前端知识 :star2:

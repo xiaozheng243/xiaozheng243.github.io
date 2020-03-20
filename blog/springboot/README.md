@@ -1,17 +1,13 @@
 ---
-
 sidebar: false
-layout: PostLayout
 ---
 
 ## SpringBoot实战笔记列表
 
-test
+### [SpringBoot学习笔记一：简单项目搭建](./SpringBoot学习笔记一：简单项目搭建)
 
-<!-- more -->
+### [SpringBoot学习笔记二：整合Swagger UI](./SpringBoot学习笔记二：整合Swagger-UI)
 
-test111
+### [SpringBoot学习笔记三：添加Mybatis](./SpringBoot学习笔记三：添加Mybatis)
 
 
-
-<img :src="$withBase('/images/musclewiki.png')" alt="musclewiki">

@@ -1,15 +1,12 @@
 ---
-layout: PostLayout
-prev: ./SpringBoot实战笔记一：简单项目搭建
-next: ./SpringBoot实战笔记三：添加Mybatis
+prev: ./SpringBoot学习笔记一：简单项目搭建
+next: ./SpringBoot学习笔记三：添加Mybatis
 ---
-# SpringBoot实战笔记二：整合Swagger UI
+# SpringBoot学习笔记二：整合Swagger UI
 
 [TOC]
 
 Swagger UI是一个为项目提供可视API文档的规范定义开源项目，它可以帮我们快速预览项目接口，并提供模拟请求的功能。下面以上一篇搭建好的SpringBoot项目为例，介绍一下如何使用Swagger UI。
-
-TODO 引入上一篇文章教程
 
 ## 1.添加Swagger UI依赖
 
@@ -71,6 +68,6 @@ public class IndexController {
 
 访问默认路径http://localhost:8080/swagger-ui.html，其效果如下：
 
-![image-20200307074831885](/Users/yuluo/Library/Application Support/typora-user-images/image-20200307074831885.png)
+![image-20200307074831885](../../docs/.vuepress/public/images/image-20200307074831885.png)
 
 到此，日常使用不成问题，详细使用可查看官方文档：https://swagger.io/docs/

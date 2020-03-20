@@ -1,14 +1,9 @@
 ---
 
-sidebar: false
-date: 2020-03-15
-author: yuluo
-tags: 
-  - JavaScript
-  - Vue
+next: ./SpringBoot学习笔记二：整合Swagger-UI
 ---
 
-# SpringBoot实战笔记一：简单项目搭建
+# SpringBoot学习笔记一：简单项目搭建
 
 [TOC]
 
@@ -23,7 +18,7 @@ tags:
 
 如下图所示：
 
-![image-20200229155120261](/Users/yuluo/Library/Application Support/typora-user-images/image-20200229155120261.png)
+![image-20200229155120261](../../docs/.vuepress/public/images/image-20200229155120261.png)
 
 页面主要分为以下几个选项：项目类型、编程语言、Spring Boot版本号、项目描述信息、项目依赖；这里我们在依赖项先添加Spring Web依赖。
 
@@ -35,7 +30,7 @@ tags:
 
 解压下载的项目压缩包，使用[IDEA](https://www.jetbrains.com/idea/ "学Java的地球人应该都知道的IDE 这里我使用的是社区版") 以maven项目形式导入，[加载依赖后](https://help.aliyun.com/document_detail/102512.html?spm=a2c40.aliyun_maven_repo.0.0.36183054hPjgJT "由于maven远程服务器在国外，项目加载依赖时，可能会非常卡顿或加载失败，可以尝试添加阿里的代理，但是请注意阿里的仓库可能会不存在最新的依赖版本，请酌情更换Spring Boot依赖版本号")，项目结构如下：
 
-![image-20200229202343739](/Users/yuluo/Library/Application Support/typora-user-images/image-20200229202343739.png)
+![image-20200229202343739](../../docs/.vuepress/public/images/image-20200229202343739.png)
 
 其中，`Demo1Application`为项目启动类。
 
@@ -46,7 +41,7 @@ tags:
 
 由于Spring Boot内置了Tomcat服务器，我们可以直接点击启动类类名左边的三角符号或右击该类以运行项目。项目启动后如下图：
 
-![image-20200229203909858](/Users/yuluo/Library/Application Support/typora-user-images/image-20200229203909858.png)
+![image-20200229203909858](../../docs/.vuepress/public/images/image-20200229203909858.png)
 
 IDEA下方日志会出现服务器加载的端口号（此处为8080），在浏览器中访问对应端口号可以访问项目。因为我们还没有配置访问地址，所以此处显示的是错误信息。
 
@@ -56,7 +51,7 @@ IDEA下方日志会出现服务器加载的端口号（此处为8080），在浏
 
 打开终端，在pom.xml同级目录中，输入`mvn spring-boot:run`即可运行，运行结果如下：
 
-![image-20200229211531411](/Users/yuluo/Library/Application Support/typora-user-images/image-20200229211531411.png)
+![image-20200229211531411](../../docs/.vuepress/public/images/image-20200229211531411.png)
 
 #### 方式三 jar包启动
 
@@ -66,7 +61,7 @@ IDEA下方日志会出现服务器加载的端口号（此处为8080），在浏
 
 3. 停止项目，可根据提供的PID号来杀死进程
 
-   ![image-20200229212632733](/Users/yuluo/Library/Application Support/typora-user-images/image-20200229212632733.png)
+   ![image-20200229212632733](../../docs/.vuepress/public/images/image-20200229212632733.png)
 
 4. 在服务器中我们可以使用脚本来快捷启动或停止项目，脚本如下：
 
@@ -95,7 +90,7 @@ IDEA下方日志会出现服务器加载的端口号（此处为8080），在浏
 
    这里简单解释一下停止脚本：
 
-   ![image-20200229220110682](/Users/yuluo/Library/Application Support/typora-user-images/image-20200229220110682.png)
+   ![image-20200229220110682](../../docs/.vuepress/public/images/image-20200229220110682.png)
 
    ```shell
    > ps -ef | grep demo1-0.0.1-SNAPSHOT.jar #查询所有与目标文件相关的进程,包括grep自身
@@ -113,7 +108,7 @@ IDEA下方日志会出现服务器加载的端口号（此处为8080），在浏
 
 在启动类同级目录下创建三个名为`controller`、`service`、`dao`的文件夹用于`视图`、`服务`、`数据控制`。在controller文件夹创建一个IndexController.java的文件，代码及结构如下图：
 
-![image-20200229220618527](/Users/yuluo/Library/Application Support/typora-user-images/image-20200229220618527.png)
+![image-20200229220618527](../../docs/.vuepress/public/images/image-20200229220618527.png)
 
 重新启动服务，浏览器访问http://localhost:8080/index/home 即可看到效果。
 
@@ -121,22 +116,22 @@ IDEA下方日志会出现服务器加载的端口号（此处为8080），在浏
 
 ### 2.1.选择Spring Initializr
 
-![create](https://upload-images.jianshu.io/upload_images/3457879-93eae0e191e5832c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![create](../../docs/.vuepress/public/images/1240.png)
 
 ### 2.2.配置项目信息
 主要填写`Group`与`Artifact`字段，其他字段按需修改
-![配置信息](https://upload-images.jianshu.io/upload_images/3457879-4335aaeade6adb09.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![配置信息](../../docs/.vuepress/public/images/1240-20200320221048878.png)
 
 ### 2.3.添加所需依赖
   在此先添加JDBC依赖，会在后文详细记录。
-  ![添加依赖](https://upload-images.jianshu.io/upload_images/3457879-e2b8a772efd41dc0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+  ![添加依赖](../../docs/.vuepress/public/images/1240-20200320221052776.png)
 
 ### 2.4.选择地址保存项目
 
-![保存项目](https://upload-images.jianshu.io/upload_images/3457879-29330ab1c24cc9bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![保存项目](../../docs/.vuepress/public/images/1240-20200320221055965.png)
 
 到此，点击finish，即可完成简单的SpringBoot项目搭建。
-![项目结构](https://upload-images.jianshu.io/upload_images/3457879-4852de06fc8a7343.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![项目结构](../../docs/.vuepress/public/images/1240-20200320221059519.png)
 
 但此时如果想要直接运行项目，需要将前面额外添加的数据库驱动依赖注释掉，否则会引起异常，因为我们还没有配置数据库连接信息！
 ```xml

@@ -38,7 +38,7 @@ next: ./mac
 
 
 
-<img :src="$withBase('/images/image-20200315123234258.png')" alt="musclewiki"/>
+
 
 ### 快速生成简单图标
 
@@ -91,3 +91,4 @@ next: ./mac
 > 访问地址：https://flatlogic.com/templates/sing-app-vue-dashboard/demo
 
 
+<img :src="$withBase('/images/image-20200315123234258.png')" alt="musclewiki"/>

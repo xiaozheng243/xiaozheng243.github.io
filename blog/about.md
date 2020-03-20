@@ -1,5 +1,5 @@
 ---
-navbar: true
+sidebar: false
 ---
 
 

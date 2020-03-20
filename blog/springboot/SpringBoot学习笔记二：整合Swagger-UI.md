@@ -68,6 +68,6 @@ public class IndexController {
 
 访问默认路径http://localhost:8080/swagger-ui.html，其效果如下：
 
-![image-20200307074831885](../../docs/.vuepress/public/images/image-20200307074831885.png)
+![image-20200307074831885](../../blog/.vuepress/public/images/image-20200307074831885.png)
 
 到此，日常使用不成问题，详细使用可查看官方文档：https://swagger.io/docs/

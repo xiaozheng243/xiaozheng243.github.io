@@ -1,5 +1,5 @@
 ---
-prev: ./SpringBoot学习笔记二：整合Swagger UI
+prev: ./SpringBoot学习笔记二：整合Swagger-UI
 
 ---
 

@@ -46,7 +46,7 @@ next: ./mac
 >
 >访问地址：https://www.faviator.xyz/
 
-![image-20200320214905435](../../docs/.vuepress/public/images/image-20200320214905435.png)
+![image-20200320214905435](../../blog/.vuepress/public/images/image-20200320214905435.png)
 
 ### 新拟态UI生成
 
@@ -54,7 +54,7 @@ next: ./mac
 >
 > 访问地址：https://neumorphism.io/#55b9f3
 
-![image-20200320211421845](../../docs/.vuepress/public/images/image-20200320211421845.png)
+![image-20200320211421845](../../blog/.vuepress/public/images/image-20200320211421845.png)
 
 
 
@@ -64,7 +64,7 @@ next: ./mac
 >
 > 访问地址：https://smartmockups.com/
 
-![image-20200320210737931](../../docs/.vuepress/public/images/image-20200320210737931.png)
+![image-20200320210737931](../../blog/.vuepress/public/images/image-20200320210737931.png)
 
 
 
@@ -74,7 +74,7 @@ next: ./mac
 >
 > 访问地址：http://www.fontex.org/free-fonts.html
 
-![image-20200320212539570](../../docs/.vuepress/public/images/image-20200320212539570.png)
+![image-20200320212539570](../../blog/.vuepress/public/images/image-20200320212539570.png)
 
 ### 在线制作音乐
 
@@ -82,7 +82,7 @@ next: ./mac
 >
 > 访问地址：https://learningmusic.ableton.com/zh/index.html
 
-![music](../../docs/.vuepress/public/images/music.jpg)
+![music](../../blog/.vuepress/public/images/music.jpg)
 
 ### 后台管理模板
 

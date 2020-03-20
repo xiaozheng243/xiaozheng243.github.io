@@ -4,15 +4,15 @@
 set -e
 
 # 生成静态文件
-npm run build
+# npm run build
 
 # 进入生成的文件夹
-cd docs/.vuepress/dist
+# cd docs/.vuepress/dist
 
 # 如果是发布到自定义域名
 # echo 'www.example.com' > CNAME
 
-git init
+# git init
 git add -A
 git commit -m 'deploy'
 
@@ -20,6 +20,7 @@ git commit -m 'deploy'
 # git config --local user.name "xiaozheng243"
 # git config --local user.email "luzz_1@163.com"
 git push -f git@github.com:xiaozheng243/xiaozheng243.github.io.git master
+
 git push -f git@gitee.com:xiaozheng243/codinglife.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>

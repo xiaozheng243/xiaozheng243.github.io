@@ -8,7 +8,7 @@ actionLink: /guide/
 features:
   - title: Java源码
     details: 阅读JDK源码，记录相关算法、数据结构及设计模式。
-  - title: SpringBoot实战笔记
+  - title: SpringBoot学习笔记
     details: 记录SpringBoot项目搭建过程，学习框架设计原理。
   - title: App/网站分享
     details: 优秀的工具总是事半功倍。

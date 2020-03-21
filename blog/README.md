@@ -1,6 +1,6 @@
 ---
 home: true
-# heroImage: /hero.png
+heroImage: /hero.png
 heroText: Coding&Life
 tagline: Java学习与分享
 actionText: 快速查看 →

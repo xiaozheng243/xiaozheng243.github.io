@@ -40,7 +40,7 @@ module.exports = {
     docsDir: 'blog',
     // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
     // "GitHub"/"GitLab"/"Bitbucket" 其中之一，或是 "Source"。
-    repoLabel: '查看源码',
+    repoLabel: 'Github',
     // 默认是 false, 设置为 true 来启用
     editLinks: true,
     // 默认为 "Edit this page"

@@ -28,7 +28,7 @@ next: ./SpringBoot学习笔记二：整合Swagger-UI
 
 ### 1.2.导入项目
 
-解压下载的项目压缩包，使用[IDEA](https://www.jetbrains.com/idea/ "学Java的地球人应该都知道的IDE 这里我使用的是社区版") 以maven项目形式导入，[加载依赖后](https://help.aliyun.com/document_detail/102512.html?spm=a2c40.aliyun_maven_repo.0.0.36183054hPjgJT "由于maven远程服务器在国外，项目加载依赖时，可能会非常卡顿或加载失败，可以尝试添加阿里的代理，但是请注意阿里的仓库可能会不存在最新的依赖版本，请酌情更换Spring Boot依赖版本号")，项目结构如下：
+解压下载的项目压缩包，使用[IDEA](https://www.jetbrains.com/idea/) 以maven项目形式导入，[加载依赖后](https://help.aliyun.com/document_detail/102512.html?spm=a2c40.aliyun_maven_repo.0.0.36183054hPjgJT)，项目结构如下：
 
 ![image-20200229202343739](../../blog/.vuepress/public/images/image-20200229202343739.png)
 
@@ -112,7 +112,7 @@ IDEA下方日志会出现服务器加载的端口号（此处为8080），在浏
 
 重新启动服务，浏览器访问http://localhost:8080/index/home 即可看到效果。
 
-## 方式二：[IDEA](https://www.jetbrains.com/idea/ "此处指的是IDEA Ultimate收费版本")本地创建项目
+## 方式二：[IDEA](https://www.jetbrains.com/idea/)本地创建项目
 
 ### 2.1.选择Spring Initializr
 
@@ -196,7 +196,7 @@ IDEA下方日志会出现服务器加载的端口号（此处为8080），在浏
 </project>
 ```
 
-关于SpringBoot项目的创建还有很多其他方式，比如[STS](https://spring.io/tools/ "Spring官方提供的eclipse插件或基于eclipse的IDE")或者maven手动添加依赖及项目文件都可以，这里不多赘述。
+关于SpringBoot项目的创建还有很多其他方式，比如[STS](https://spring.io/tools)或者maven手动添加依赖及项目文件都可以，这里不多赘述。
 
 ## 项目结构及注解简析
 

@@ -15,7 +15,7 @@ next: ./mac
 
 > 根据选择肌肉来查找运动方式
 >
-> 访问地址：https://musclewiki.org/
+> 访问地址：[https://musclewiki.org/](https://musclewiki.org/)
 
 <img :src="$withBase('/images/musclewiki.png')" alt="musclewiki"/>
 
@@ -23,15 +23,15 @@ next: ./mac
 
 > 根据颜色来生成渐变图片或CSS样式
 >
-> 访问地址：https://uigradients.com/#Winter
+> 访问地址：[https://uigradients.com/#Winter](https://uigradients.com/#Winter)
 >
 > 类似网站地址：
 >
-> https://webkul.github.io/coolhue/
+> [https://webkul.github.io/coolhue/](https://webkul.github.io/coolhue/)
 >
-> https://webgradients.com/
+> [https://webgradients.com/](https://webgradients.com/)
 >
-> https://gradient.shapefactory.co/
+> [https://gradient.shapefactory.co/](https://gradient.shapefactory.co/)
 
 
 <img :src="$withBase('/images/image-20200315122629793.png')" alt="musclewiki"/>
@@ -44,7 +44,7 @@ next: ./mac
 
 >选择字体，加载样式，生成图标，就是辣么简单
 >
->访问地址：https://www.faviator.xyz/
+>访问地址：[https://w.faviator.xyz/(www.faviator.xyz/)
 
 ![image-20200320214905435](../../blog/.vuepress/public/images/image-20200320214905435.png)
 
@@ -52,7 +52,7 @@ next: ./mac
 
 > UI设计中，继拟物化、扁平化之后的又一选择。可以应用在PPT、web、APP等设计中。
 >
-> 访问地址：https://neumorphism.io/#55b9f3
+> 访问地址：[https://neumorphism.io/#55b9f3](https://neumorphism.io/#55b9f3)
 
 ![image-20200320211421845](../../blog/.vuepress/public/images/image-20200320211421845.png)
 
@@ -62,7 +62,7 @@ next: ./mac
 
 > 在素材中嵌入你想要的图片
 >
-> 访问地址：https://smartmockups.com/
+> 访问地址：[https://smartmockups.com/](https://smartmockups.com/)
 
 ![image-20200320210737931](../../blog/.vuepress/public/images/image-20200320210737931.png)
 
@@ -72,7 +72,7 @@ next: ./mac
 
 > 多种英文字体下载
 >
-> 访问地址：http://www.fontex.org/free-fonts.html
+> 访问地址：[http://www.fontex.org/free-fonts.html](http://www.fontex.org/free-fonts.html)
 
 ![image-20200320212539570](../../blog/.vuepress/public/images/image-20200320212539570.png)
 
@@ -80,7 +80,7 @@ next: ./mac
 
 > 快速学习音乐知识，通过简单的旋律组合成一段音乐
 >
-> 访问地址：https://learningmusic.ableton.com/zh/index.html
+> 访问地址：[https://learningmusic.ableton.com/zh/index.html](https://learningmusic.ableton.com/zh/index.html)
 
 ![music](../../blog/.vuepress/public/images/music.jpg)
 
@@ -88,7 +88,7 @@ next: ./mac
 
 > 基于Vue的后台模板
 >
-> 访问地址：https://flatlogic.com/templates/sing-app-vue-dashboard/demo
+> 访问地址：[https://flatlogic.com/templates/sing-app-vue-dashboard/demo](https://flatlogic.com/templates/sing-app-vue-dashboard/demo)
 
 
 <img :src="$withBase('/images/image-20200315123234258.png')" alt="musclewiki"/>

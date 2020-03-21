@@ -16,8 +16,7 @@ module.exports = {
       { text: "Home", link: "/" },
       {
         text: "Java",
-        ariaLabel: "Language Menu",
-        items: [{ text: "SpringBoot", link: "/springboot/" }]
+        items: [{ text: "SpringBoot", link: "/springboot/" }, { text: "Java源码", link: "/java_core/" }]
       },
       { text: "Life", link: "/life/" },
       { text: "Share", link: "/share/" },

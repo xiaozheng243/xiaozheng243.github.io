@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "vuepress dev blog",
     "build": "vuepress build blog",
+    "push": "bash push.sh",
     "deploy": "bash deploy.sh"
   },
   "keywords": [],

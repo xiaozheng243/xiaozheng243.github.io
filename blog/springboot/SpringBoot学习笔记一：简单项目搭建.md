@@ -240,3 +240,5 @@ SpringBoot项目简单结构如下：
    1. `@Controller`：`@Component`的子注解
    2. `@ResponseBody`：将返回的Java对象信息转换为Json数据返回
 3. `@RequestMapping`：将HTTP请求映射到REST控制器上，可以配置请求路径及请求方式，后面会见到很多用法
+
+**源码访问：[Github 55440cc](https://github.com/xiaozheng243/SpringBoot/tree/55440cc)**

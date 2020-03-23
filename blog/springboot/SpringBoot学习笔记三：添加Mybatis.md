@@ -78,7 +78,7 @@ public interface UserMapper  {
 1. `@Repository`是`@Component`的子注解，能使该接口注册为Bean；
 2. Mybatis也提供了注解来应对一些CURD操作，因此，`@Select`注解可以取代`第三步`的XML配置操作，二选一即可。这里建议简单的操作可通过注解形式完成，复杂的操作还是使用XML配置来完成。
 
-## 2.添加配置文件
+## 3.添加配置文件
 
 在`resource`资源文件夹中创建`mapper`文件夹用以存放Mybatis对应的XML配置文件。
 
@@ -122,7 +122,7 @@ mybatis:
 
 **注意** ：
 
-1. MySQL6.0的连接驱动名称为`com.mysql.cj.jdbc.Driver`
+1. MySQL6.0之后的连接驱动名称为`com.mysql.cj.jdbc.Driver`
 2. URL设置东八区：&serverTimezone=Shanghai
 
 ## 5.添加Mapper扫描

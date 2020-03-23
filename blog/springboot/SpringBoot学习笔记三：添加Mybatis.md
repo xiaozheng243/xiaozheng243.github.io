@@ -5,6 +5,8 @@ prev: ./SpringBoot学习笔记二：整合Swagger-UI
 
 # SpringBoot学习笔记三：添加Mybatis
 
+[TOC]
+
 > Mybatis是一个支持定制化SQL、存储过程及高级映射的持久化框架。 -- Mybatis官方
 
 **开始之前：**
@@ -39,7 +41,7 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 ## 1.添加依赖
 
-Mysbatis需要以数据库驱动作为前提，因此，此处添加了Mysql驱动。
+Mysbatis需要以数据库驱动作为前提，因此，此处同时添加了Mysql驱动。
 
 ```xml
  <!--mysql-->
@@ -57,6 +59,25 @@ Mysbatis需要以数据库驱动作为前提，因此，此处添加了Mysql驱�
 </dependency>
 ```
 
+
+## 2.添加Dao接口
+
+在启动类所在路径添加`dao`或`mapper`包用以存放Dao操作的接口。在该包中创建`UserMapper.java`接口，代码如下：
+
+```java
+package online.yuluo.demo.mapper;
+@Repository
+public interface UserMapper  {
+//    @Select("select * from user")
+    List<User> queryUsers(User user);
+}
+```
+
+简析：
+
+1. `@Repository`是`@Component`的子注解，能使该接口注册为Bean；
+2. Mybatis也提供了注解来应对一些CURD操作，因此，`@Select`注解可以取代`第三步`的XML配置操作，二选一即可。这里建议简单的操作可通过注解形式完成，复杂的操作还是使用XML配置来完成。
+
 ## 2.添加配置文件
 
 在`resource`资源文件夹中创建`mapper`文件夹用以存放Mybatis对应的XML配置文件。
@@ -68,9 +89,9 @@ Mysbatis需要以数据库驱动作为前提，因此，此处添加了Mysql驱�
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="online.yuluo.demo1.mapper.UserMapper">
+<mapper namespace="online.yuluo.demo.mapper.UserMapper">
     <select id="queryUsers"
-            resultType="online.yuluo.demo1.domain.User">
+            resultType="online.yuluo.demo.domain.User">
         SELECT * from user
     </select>
 </mapper>
@@ -78,27 +99,9 @@ Mysbatis需要以数据库驱动作为前提，因此，此处添加了Mysql驱�
 
 简析：
 
-1. 工作空间`namespace`字段的值对应`第三步`中dao接口的相对路径；
+1. 工作空间`namespace`字段的值对应`第二步`中dao接口的相对路径；
 2. 查询操作的ID名称对应接口中的方法名称；
 3. 返回值类字段型`resultType`对应接口返回值类型对象的相对路径。
-
-## 3.添加Dao接口
-
-在启动类所在路径添加`Dao`或`Mapper`包用以存放Mybatis接口。在该包中创建`UserMapper.java`接口，代码如下：
-
-```java
-package online.yuluo.demo1.mapper;
-@Repository
-public interface UserMapper  {
-//    @Select("select * from user")
-    List<User> queryUsers(User user);
-}
-```
-
-简析：
-
-1. `@Repository`是`@Component`的子注解，能使该接口注册为Bean；
-2. Mybatis也提供了注解来应对一些CURD操作，因此，`@Select`注解可以取代`第二步`的XML配置操作，二选一即可。这里建议简单的操作可通过注解形式完成，复杂的操作还是使用XML配置来完成。
 
 ## 4.添加项目全局配置
 
@@ -114,7 +117,7 @@ spring:
     
 mybatis:
   mapper-locations: classpath:mapper/*.xml #Mybatis的XML配置文件地址
-  type-aliases-package: online.yuluo.demo1.domain #实体对象地址
+  type-aliases-package: online.yuluo.demo.domain #实体对象地址
 ```
 
 **注意** ：
@@ -128,10 +131,10 @@ mybatis:
 
 ```java
 @SpringBootApplication
-@MapperScan("online.yuluo.demo1.mapper")
-public class Demo1Application {
+@MapperScan("online.yuluo.demo.mapper")
+public class DemoApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(Demo1Application.class, args);
+		SpringApplication.run(DemoApplication.class, args);
 	}
 }
 ```

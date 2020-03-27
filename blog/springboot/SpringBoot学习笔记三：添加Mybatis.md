@@ -139,3 +139,7 @@ public class DemoApplication {
 }
 ```
 
+
+到此，Mybatis配置完成，添加Controller与service对UserMapper.queryUsers进行调用，即可进行简单的测试，详细请查看本文源码[Github](https://github.com/xiaozheng243/SpringBoot/tree/446539)
+
+## 添加Mybatis-plus

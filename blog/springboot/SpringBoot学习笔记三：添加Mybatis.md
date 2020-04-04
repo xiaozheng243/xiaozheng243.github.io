@@ -335,6 +335,8 @@ public class DruidConfig {
 
 启动项目后，访问[http://localhost:8080/druid/index.html](http://localhost:8080/druid/index.html)即可查看监控页面。
 
+更多配置访问[https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter](https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter)
+
 源码访问：[Github](https://github.com/xiaozheng243/SpringBoot/tree/7df3bc)
 
 via https://blog.csdn.net/weixin_43453386/article/details/83582399

@@ -1,12 +1,12 @@
-# SpringCloud 之Eureka server
-
 [TOC]
+
+## Eureka Server
 
 Eureka Server主要作为服务注册中心使用。
 
 搭建过程：
 
-## 添加Eureka Server依赖
+### 添加Eureka Server依赖
 
 ```xml
 <!--父依赖-->
@@ -24,21 +24,20 @@ Eureka Server主要作为服务注册中心使用。
 </dependency>
 ```
 
-
-## 配置文件修改
+### 配置文件修改
 
 ```yaml
 server:
   port: 7001 # 端口号
 eureka:
   instance:
-    hostname: localhost # 服务地址
+    hostname: eurekaserver01.com # 服务地址,将eurekaserver01.com添加到host，后面有介绍
   client:
     register-with-eureka: false #是否向注册中心注册
     fetch-registry: false # 是否去用户中心获取其他已注册服务信息
 ```
 
-## 启动类添加注解
+### 启动类添加注解
 
 ```java
 @EnableEurekaServer // 将本服务配置为注册中心
@@ -56,11 +55,11 @@ public class EurekaServerApplication {
 
 ![image-20200404165318202](../.vuepress/public/images/image-20200404165318202.png)
 
-# Eureka Client
+## Eureka Client
 
 
 
-## 引入依赖
+### 引入依赖
 
 ```xml
 <!--父依赖-->
@@ -77,22 +76,24 @@ public class EurekaServerApplication {
 </dependency>
 ```
 
-## 配置文件修改
+### 配置文件修改
 
 ```yaml
 server:
   port: 8081
-
+spring:
+   application:
+      name: micro-client
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:7001/eureka  # 注册中心地址
+      defaultZone: http://eurekaserver01.com:7001/eureka  # 注册中心地址
   instance:
     instance-id: micro-client:8081 # 本服务实例信息
     prefer-ip-address: true #暴露IP地址
 ```
 
-## 启动类添加注解
+### 启动类添加注解
 
 ```java
 @EnableEurekaClient
@@ -106,7 +107,108 @@ public class EurekaClientApplication {
 
 注解`@EnableEurekaClient`与`@EnableDiscoveryClient`用法及功能类似，主要是暴露服务被注册中心发现，前者主要针对Eureka使用。Spring Cloud Edgware版本之后该注解省略也可注册服务到注册中心（只需要引入client依赖就行了）。
 
-# 构建Eureka Server集群
+## 服务发现与远程调用
+
+通过SpringCloud提供的DiscoveryClient可以发现其他服务的元数据。
+
+### 服务发现
+
+复制一个Eureka Client项目，将其修改为eureka-consumer，用来执行调用其他服务的操作（消费者）。
+
+在消费者的Controller中尝试获取其他服务的信息：
+
+```java
+// eureka-consumer
+import org.springframework.cloud.client.discovery.DiscoveryClient;
+@RestController
+@RequestMapping(value = "/api/consumer")
+public class IndexController {
+	@Autowired
+	private DiscoveryClient discoveryClient;
+	@GetMapping(value = "/getInstances/{serviceId}")
+	public String getInstancesInfo(@PathVariable String serviceId) {
+		List<ServiceInstance> instanceList = discoveryClient.getInstances(serviceId);
+		return JSON.toJSONString(instanceList);
+	}
+}
+```
+
+启动后访问localhost:8003/api/consumer/getInstances/MICRO-CLIENT 即可查看其他服务的信息。应当注意，这个输入的serviceId为服务生产者的application.name值
+
+### 服务间的远程调用
+
+当服务向同一个注册中心注册后可以相互发现并远程调用。本次使用`RestTemplate`
+
+在启动类中添加RestTemplate的Bean初始化
+
+```java
+// eureka-consumer
+@EnableEurekaClient
+@SpringBootApplication
+public class EurekaClientApplication2 {
+	@Bean(value = "restTemplate")
+	public RestTemplate restTemplate() {
+		return new RestTemplate();
+	}
+	public static void main(String[] args) {
+		SpringApplication.run(EurekaClientApplication2.class, args);
+	}
+}
+```
+
+在原项目eureka-client中创建Controller模拟一个接口用以被调用（生产者）。
+
+```java
+// eureka-client
+@RestController
+@RequestMapping(value = "/api/index")
+public class IndexController {
+	@Value("${eureka.instance.instance-id}")
+	private String ipAdress;
+	@Value("${server.port}")
+	private String port;
+	@GetMapping(value = "/getMsg")
+	public String getMsg() {
+		return "Hello," + ipAdress + ":" + port;
+	}
+}
+```
+
+在eureka-consumer项目中也创建一个Controller用以触发远程调用（消费者）。
+
+```java
+// eureka-consumer
+@RestController
+@RequestMapping(value = "/api/consumer")
+public class IndexController {
+	@Autowired
+	private RestTemplate restTemplate;
+    // 方式1
+	@GetMapping(value = "/getMsg")
+	public String getMsg() {
+		return restTemplate.getForObject("http://localhost:8001/api/index/getMsg", String.class);
+	}
+    // 方式2
+    @GetMapping(value = "/getMsg/{serviceId}")
+    public String getInstanceMsg(@PathVariable String serviceId) {
+        List<ServiceInstance> instanceList = discoveryClient.getInstances(serviceId);
+        if (instanceList.isEmpty()) {
+            logger.info("");
+            // throw
+        }
+        ServiceInstance serviceInstance = instanceList.get(0);
+        return restTemplate.getForObject(
+            "http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/api/index/getMsg",
+            String.class);
+	}
+}
+```
+
+如上代码，使用getForObject接收一个远程服务的接口地址即可。方式2借助了前面的服务发现，只需要提供生产者的application.name的值即可（生产者暴露的application名称）
+
+
+
+## 构建Eureka Server集群
 
 复制上方Eureka Server项目，组成`Eureka-server`、`Eureka-server1`、`Eureka-server2`三个服务，其配置文件如下：
 
@@ -204,48 +306,3 @@ eureka:
 
 ![image-20200404172012545](../.vuepress/public/images/image-20200404172012545.png)
 
-# 负载均衡
-
-Load balancing(LB)，主要用于分配负载，以达到最优化资源使用、最大化吞吐率、最小化响应时间、同时避免过载的目的。
-
-现实生活中最常见的例子就是多条队伍排队，后来的人会比较一下各条队伍，选择达到目的地相对较快的队伍。（`消费者负载均衡`）
-
-可以使用硬件(F5)、软件(HAProxy)等实现，本文使用能够无缝整合Eureka的`Ribbon`。
-
-
-
-## 添加Ribbon依赖
-
-```xml
-<!-- Ribbon -->
-<dependency>
-    <groupId>org.springframework.cloud</groupId>
-    <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
-</dependency>
-```
-
-
-
-## 添加代码配置
-
-```java
-@EnableEurekaClient
-@SpringBootApplication
-public class EurekaClientApplication {
-	@LoadBalanced
-	@Bean(value = "restTemplate")
-	public RestTemplate restTemplate() {
-		return new RestTemplate();
-	}
-	public static void main(String[] args) {
-		SpringApplication.run(EurekaClientApplication.class, args);
-	}
-}
-```
-
-原理：
-
-1. Ribbon根据所在的注册中心选择一个负载较少的Eureka服务器
-2. 定期从Eureka服务器更新，过滤服务实例列表
-3. 根据指定的负载均衡策略（默认轮询），从可用服务实例中选择一个较优的
-4. 使用Rest客户端进行服务调用

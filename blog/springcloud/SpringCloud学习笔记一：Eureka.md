@@ -306,3 +306,34 @@ eureka:
 
 ![image-20200404172012545](../.vuepress/public/images/image-20200404172012545.png)
 
+## 相关原理及配置
+
+CAP：
+
+- 一致性（Consistency）：同一个数据在集群中的所有节点，同一时刻是否都是同样的值。
+- 可用性（Availability）：集群中一部分节点故障后，集群整体是否还能处理客户端的请求。
+- 分区容忍性（Partition tolerance）：是否允许集群中的节点之间无法通信。
+
+Eureka：AP原则，Zookeeper：CP原则
+
+
+1. 服务注册（Register）
+注册服务列表是以嵌套HashMap格式存在的，Eurek客户端自检时，如果不可用，将会向注册中心更新状态，同时用replicateToPeers()向其他Eureka服务器节点做状态同步
+eureka.client.register-with-eureka控制是否向注册中心注册
+
+2. 服务续约（Renew）
+客户端每隔一段时间向服务器发送一次心跳（即续约请求，默认为30s，eureka.instance.lease-renewal-interval-in-seconds控制心跳时间）
+若服务器在一段时间内（默认为90s，可通过eureka.instance.lease-expiration-duration-in-seconds修改），没有收到客户端的续约请求，则剔除该服务。
+若服务器开启了保护模式，则不会剔除。
+
+3. 获取服务
+客户端每隔30s会获取服务器注册列表并缓存到本地
+
+4. Region&Zone
+概念来自于AWS（Amazon Web Services），客户端优先访问速度最快的服务器。
+Region：可以理解为地理上的分区，比如华南区、华北区、北京、深圳等
+zone：可以理解为机房，比如深圳的两个机房
+
+### Eureka自我保护
+
+Eureka服务器每分钟接收心跳续约的次数少于一个阈值就会触发自我保护，防止已注册的服务被剔除(AP原则)。

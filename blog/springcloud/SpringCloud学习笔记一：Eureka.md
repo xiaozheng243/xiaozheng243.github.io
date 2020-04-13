@@ -133,7 +133,7 @@ public class IndexController {
 }
 ```
 
-启动后访问localhost:8003/api/consumer/getInstances/MICRO-CLIENT 即可查看其他服务的信息。应当注意，这个输入的serviceId为服务生产者的application.name值
+启动后访问localhost:8003/api/consumer/getInstances/MICRO-CLIENT 即可查看其他服务的信息。应当注意这个输入的serviceId为服务生产者的application.name值
 
 ### 服务间的远程调用
 
@@ -337,3 +337,4 @@ zone：可以理解为机房，比如深圳的两个机房
 ### Eureka自我保护
 
 Eureka服务器每分钟接收心跳续约的次数少于一个阈值就会触发自我保护，防止已注册的服务被剔除(AP原则)。
+

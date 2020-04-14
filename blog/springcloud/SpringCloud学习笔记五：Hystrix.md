@@ -59,23 +59,23 @@ public class IndexController {
     }
 
     public String getMsgFallBack() {
-        return "本消息来自于降级方法！";
+        return "本消息来自于服务降级处理方法！";
     }
 
 }
 ```
 
-其中，` @HystrixCommand`用以指定熔断时的降级方法。降级方法的参数列表及返回值类型应与原方法一致。
+其中，` @HystrixCommand`用以指定熔断时的服务降级处理方法。服务降级处理方法的参数列表及返回值类型应与原方法一致。
 
-生产者（服务提供者）代码省略，最简单的测试方法是关闭服务提供者，查看消费者的远程调用是否返回降级方法的内容。
+生产者（服务提供者）代码省略，最简单的测试方法是关闭服务提供者，查看消费者的远程调用是否返回服务降级处理方法的内容。
 
 [查看源码，涉及服务为eureka-consumer1->eureka-server0->eureka-producer0](https://gitee.com/xiaozheng243/SpringCloud/tree/hystrix/spring-cloud-parent)
 
 
 
-## 添加类中的统一降级方法
+## 添加类中的统一服务降级处理方法
 
-为应对多个方法需要触发熔断机制，可以提供统一降级方法。其代码如下：
+为应对多个方法需要触发熔断机制，可以提供统一服务降级处理方法。其代码如下：
 
 ```java
 @RestController
@@ -93,18 +93,18 @@ public class IndexController {
     }
     
     public String getMsgFallBack() {
-        return "本消息来自于降级方法！";
+        return "本消息来自于服务降级处理方法！";
     }
     
     public String defaultFallBack(){
-        return "本消息来自于统一降级方法";
+        return "本消息来自于统一服务降级处理方法";
     }
 }
 ```
 
 修改内容：
 
-1. 添加统一的降级方法，该方法返回值应该与所有原方法一致，并保证参数列表为空
-2. 移除方法指定的降级方法
-3. 给类添加统一的降级方法
+1. 添加统一的服务降级处理方法，该方法返回值应该与所有原方法一致，并保证参数列表为空
+2. 移除方法指定的服务降级处理方法
+3. 给类添加统一的服务降级处理方法
 
